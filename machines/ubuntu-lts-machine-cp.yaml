@@ -13,9 +13,9 @@ images:
   arch: "x86_64"
 
 # Virtual Machine (VM) specification (CPUs, RAM and Disk)
-cpus: 12
-memory: "28GiB"
-disk: "200GiB"
+cpus: 2
+memory: "2GiB"
+disk: "8GiB"
 
 # Networking configuration
 # Use limactl create / start --set='.networks[].macAddress="52:55:55:12:34:56"' to set unique mac address to each VM created
