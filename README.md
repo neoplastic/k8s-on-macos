@@ -37,6 +37,9 @@ Following tools are required by this project. [Homebrew](https://brew.sh/) can b
 - [ ] [helm](https://helm.sh/)
 - [ ] [Git](https://git-scm.com/)
 
+### Socket_vmnet requires to be installed using the binary
+Use the binary instructions to install socket_vmnet as homebrew creates the binaries in a permission space that Lima cannot use.
+
 ### Networking
 Shared network `192.168.105.0/24` in macOS is used as it allows both Host-VM and VM-VM communication. By default Lima VM uses DHCP range until `192.168.105.99` therefore we use IP address range from `192.168.105.100` and onward in our Kubernetes setup. To have predictable node IPs for a Kubernetes cluster, it is neccessary to [reserve IPs](https://github.com/lima-vm/socket_vmnet#how-to-reserve-dhcp-addresses) to be used from DHCP server in macOS.
 
@@ -101,6 +104,9 @@ After `socket_vmnet` is upgraded, it is neccessary to adjust the absolute path i
 ```
 limactl sudoers >etc_sudoers.d_lima && sudo install -o root etc_sudoers.d_lima "/private/etc/sudoers.d/lima"
 ```
+
+### Add the directories for socket_vmnet
+`sudo mkdir -p /opt/lima/storage`
 
 
 ## Create Machines for Different Kubernetes Cluster Topologies 
