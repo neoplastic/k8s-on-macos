@@ -29,6 +29,9 @@ portForwards:
   - guestPortRange: [30000, 32767]
     hostPortRange: [30000, 32767]
     hostIP: "0.0.0.0"
+  - guestPort: 6443
+    hostPort: 6443
+    hostIP: "0.0.0.0"
 
 # Use /var/tmp directory on macOS host as local-path-provisioner add-on storage
 mountType: 9p
